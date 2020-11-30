@@ -2,3 +2,24 @@
  -fx-background-color: black;
  -fx-font-size: 14pt;
 }
+
+.label {
+	-fx-text-fill: white;
+}
+
+.scroll-pane {
+	-fx-background: black;
+	-fx-padding: 10;
+}
+
+.main-text {
+	-fx-text-fill: cyan;
+	-fx-font-size: 24px;
+}
+
+.main-label {
+	-fx-text-fill: yellow; 
+	-fx-font-size: 16px;
+}
+
+
