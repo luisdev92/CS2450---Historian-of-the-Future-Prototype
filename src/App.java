@@ -318,10 +318,10 @@ public class App extends Application {
 				GridPane.setConstraints(name, 0, 0);
 				
 				
-				TextField lastName = new TextField();
-				lastName.setPromptText("Enter Email");
-				GridPane.setConstraints(lastName, 0, 1);
-				grid.getChildren().add(lastName);
+				TextField email = new TextField();
+				email.setPromptText("Enter Email");
+				GridPane.setConstraints(email, 0, 1);
+				grid.getChildren().add(email);
 	
 				TextField comment = new TextField();
 				comment.setPrefColumnCount(15);
@@ -348,8 +348,20 @@ public class App extends Application {
 				
 				submit.setOnAction((e) -> {
 			        if ((comment.getText() != null && !comment.getText().isEmpty())) {
-			            label.setText(name.getText() + " " + lastName.getText() + ", "
+			            label.setText(name.getText() + " " + email.getText() + ", "
 			                + "thank you for your comment!");
+			            
+			            // Sends to an API email service which notifies 
+			            // the admin of the page
+			            
+			            System.out.println("....Sent to the Admins Email...."); 
+			            System.out.println("Persons Name: " + name.getText()); 
+			            System.out.println("Email: " + email.getText()); 
+			            System.out.println("Comment: " + comment.getText()); 
+			            
+			            
+			            
+			            
 			        } else {
 			            label.setText("You have not left a comment.");
 			        }
@@ -357,7 +369,7 @@ public class App extends Application {
 				
 				clear.setOnAction((e) -> {
 			        name.clear();
-			        lastName.clear();
+			        email.clear();
 			        comment.clear();
 			        label.setText(null);
 				});
